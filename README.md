@@ -65,5 +65,5 @@ It includes table creation, data insertion, queries for analysis, and updates—
 ---
 
 ## Connect
-- LinkedIn: [Your LinkedIn URL]  
-- GitHub: [Your GitHub Profile URL]  
+- LinkedIn: [www.linkedin.com/in/yukeshkanna022007]  
+- GitHub: [https://github.com/yukeshkannayukeahkanna-afk]  
