@@ -1,59 +1,128 @@
 # students-sql-project
 # Student Performance Analysis (SQL)
 
-## Overview
-This project demonstrates practical SQL skills by managing and analyzing a **student performance dataset**.  
-It includes table creation, data insertion, queries for analysis, and updates—covering key SQL concepts useful for learning and portfolio purposes.
+## 📌 Project Overview
+
+This project was developed as part of a **SQL Data Analysis Internship** task.
+
+The goal is to design a relational database for managing student data and analyzing academic performance using SQL queries.
+
+The project is divided into two parts:
+
+* **Task 1:** Create a Student Management Database and perform basic analysis.
+* **Task 2:** Extend the database with Courses and Enrollments tables and perform advanced analysis using JOINs and aggregations.
 
 ---
 
-## Features / Skills Covered
-- **Table Creation:** Using `CREATE TABLE` with primary keys and data types.  
-- **Data Insertion:** Populating tables with multiple rows using `INSERT INTO`.  
-- **Data Retrieval:** Selecting all columns, filtering with `WHERE`, sorting with `ORDER BY`.  
-- **Aggregate Functions:** Calculating averages (`AVG`) and counts (`COUNT`).  
-- **Grouping Data:** Using `GROUP BY` to analyze grades and gender.  
-- **Updating Records:** Modifying data using `UPDATE`.  
-- **Finding Top Performers:** Calculating total scores and identifying highest scorers.  
+## 🗂 Database Structure
+
+### 1️⃣ Students Table
+
+Stores student personal details and subject-wise scores.
+
+**Columns:**
+
+* StudentID (Primary Key)
+* Name
+* Gender
+* Age
+* Grade
+* MathScore
+* ScienceScore
+* EnglishScore
 
 ---
 
-## SQL Code Files
-- `students_analysis.sql` → Contains all SQL commands for this project:
-  1. Create `Students` table
-  2. Insert student data
-  3. Retrieve all student records
-  4. Calculate average scores
-  5. Calculate total scores and identify top scorer
-  6. Count students by grade
-  7. Average total score by gender
-  8. Filter students based on Math score
-  9. Update a student’s grade
+### 2️⃣ Courses Table
+
+Stores course details.
+
+**Columns:**
+
+* CourseID (Primary Key)
+* CourseName
 
 ---
 
-## Sample Queries & Results
-- Top performer by total score  
-- Average scores per subject  
-- Student count by grade  
-- Gender-wise average total score  
+### 3️⃣ Enrollments Table
 
-*(Results can be seen by running the SQL code in MySQL, PostgreSQL, or DB Fiddle)*
+Creates a relationship between Students and Courses.
 
----
+**Columns:**
 
-## Tools & Technologies
-- **SQL** (MySQL/PostgreSQL compatible)  
-- **DB Fiddle** for testing queries  
-- **GitHub** for version control and portfolio
+* EnrollmentID (Primary Key)
+* StudentID (Foreign Key)
+* CourseID (Foreign Key)
+* Grade (Marks scored in the course)
 
 ---
 
-## How to Run
-1. Clone or download this repository.  
-2. Open your SQL database (MySQL, PostgreSQL, or DB Fiddle).  
-3. Run `students_analysis.sql` step by step.  
-4. Observe results and modify data if needed for practice.
+## 🔗 Relationships
+
+* One student can enroll in multiple courses.
+* One course can have multiple students.
+* This forms a **one-to-many relationship**, implemented using foreign keys.
+
+---
+
+## 📊 SQL Concepts Used
+
+✔ CREATE TABLE
+✔ INSERT INTO
+✔ SELECT
+✔ WHERE
+✔ UPDATE
+✔ ORDER BY
+✔ GROUP BY
+✔ Aggregate Functions (AVG, SUM, COUNT)
+✔ JOIN (INNER JOIN)
+✔ Subqueries
+
+---
+
+## 📈 Analysis Performed
+
+* View all students
+* Calculate average marks per subject
+* Find top-performing students
+* Count students per grade
+* List students enrolled in each course
+* Calculate average grade per course
+* Find top 3 students overall
+* Count students who failed
+
+---
+
+## 🛠 Tools Used
+
+* MySQL / PostgreSQL
+* DB Fiddle (Online SQL Runner)
+* VS Code
+
+---
+
+## 🎯 Learning Outcomes
+
+* Designed a relational database structure
+* Implemented foreign key constraints
+* Practiced SQL joins and aggregations
+* Developed analytical thinking using SQL
+* Understood normalization and table relationships
+
+---
+
+## 🚀 How to Run
+
+1. Copy the SQL script into MySQL / DB Fiddle.
+2. Execute the script.
+3. Run the queries provided at the end of the file to view results.
+
+---
+
+## 📌 Author
+
+Developed by: **Yukesh Kanna**
+SQL Data Analysis Internship Project
 
 ---
 
