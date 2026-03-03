@@ -1,18 +1,20 @@
-CREATE TABLE Students (
-    StudentID INT PRIMARY KEY AUTO_INCREMENT,
-    Name VARCHAR(50),
-    Gender CHAR(1),
-    Age INT(2),
-    Grade VARCHAR(2),
-    MathScore INT(3),
-    ScienceScore INT(3),
-    EnglishScore INT(3));
-INSERT INTO Students 
-(Name, Gender, Age, Grade, MathScore, ScienceScore, EnglishScore)
-VALUES
+DROP TABLE IF EXISTS student_details;
+
+CREATE TABLE student_details (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50),
+    gender CHAR(1),
+    age INT,
+    section CHAR(1),
+    mark1 INT,
+    mark2 INT,
+    mark3 INT
+);
+
+INSERT INTO student_details (name, gender, age, section, mark1, mark2, mark3) VALUES
 ('Yukesh', 'M', 19, 'A', 92, 89, 94),
-('Rekha', 'F', 19, 'A', 91, 93, 89),
 ('Dhivakaran', 'M', 20, 'A', 85, 88, 90),
+('Rekha', 'F', 19, 'A', 91, 93, 89),
 ('Asin', 'F', 21, 'B', 78, 82, 80),
 ('Gopika', 'F', 20, 'C', 65, 70, 68),
 ('Rickul', 'M', 22, 'C', 64, 66, 62),
@@ -21,28 +23,29 @@ VALUES
 ('Jeni', 'F', 20, 'A', 88, 90, 92),
 ('Sunil', 'M', 21, 'B', 76, 74, 78);
 
-SELECT * FROM Students;
-SELECT 
-    AVG(MathScore) AS Avg_Math,
-    AVG(ScienceScore) AS Avg_Science,
-    AVG(EnglishScore) AS Avg_English
-FROM Students;
-SELECT *,
-       (MathScore + ScienceScore + EnglishScore) AS TotalScore
-FROM Students
-ORDER BY TotalScore DESC
-LIMIT 1;
-SELECT Grade, COUNT(*) AS StudentCount
-FROM Students
-GROUP BY Grade;
-SELECT Gender,
-       AVG(MathScore + ScienceScore + EnglishScore) AS AvgTotalScore
-FROM Students
-GROUP BY Gender;
-SELECT * 
-FROM Students
-WHERE MathScore > 90;
-UPDATE Students
-SET Grade = 'A+'
-WHERE Name = 'Yukesh';
-SELECT * FROM Students WHERE Name = 'Yukesh';
+SELECT * FROM student_details;
+
+SELECT name, 
+       mark1 + mark2 + mark3 AS total_marks
+FROM student_details;
+
+SELECT name,
+       (mark1 + mark2 + mark3)/3 AS average_marks
+FROM student_details;
+
+SELECT name,
+       (mark1 + mark2 + mark3)/3 AS average_marks
+FROM student_details
+ORDER BY average_marks DESC
+LIMIT 3;
+
+SELECT section,
+       AVG((mark1 + mark2 + mark3)/3) AS section_average
+FROM student_details
+GROUP BY section;
+
+SELECT name
+FROM student_details
+WHERE mark1 < 40
+   OR mark2 < 40
+   OR mark3 < 40;
