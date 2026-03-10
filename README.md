@@ -1,128 +1,171 @@
 # students-sql-project
-# Student Performance Analysis (SQL)
+# 🎓 Student Performance Analysis using SQL
 
 ## 📌 Project Overview
 
-This project was developed as part of a **SQL Data Analysis Internship** task.
+This project demonstrates how **SQL can be used for data analysis** by analyzing student academic performance.
+The database contains information about students, courses, and their marks. Using SQL queries, we generate insights such as **average scores, top-performing students, rankings, pass percentages, and course-wise performance.**
 
-The goal is to design a relational database for managing student data and analyzing academic performance using SQL queries.
-
-The project is divided into two parts:
-
-* **Task 1:** Create a Student Management Database and perform basic analysis.
-* **Task 2:** Extend the database with Courses and Enrollments tables and perform advanced analysis using JOINs and aggregations.
+This project is designed to showcase **data analytics skills using SQL**, including joins, aggregations, ranking, and views.
 
 ---
 
-## 🗂 Database Structure
+# 🗂 Database Structure
+
+The project consists of **three main tables**.
 
 ### 1️⃣ Students Table
 
-Stores student personal details and subject-wise scores.
+Stores student demographic details and subject scores.
 
-**Columns:**
-
-* StudentID (Primary Key)
-* Name
-* Gender
-* Age
-* Grade
-* MathScore
-* ScienceScore
-* EnglishScore
+| Column       | Description               |
+| ------------ | ------------------------- |
+| StudentID    | Unique student identifier |
+| Name         | Student name              |
+| Gender       | Student gender            |
+| Age          | Age of student            |
+| Grade        | Class/section             |
+| MathScore    | Mathematics marks         |
+| ScienceScore | Science marks             |
+| EnglishScore | English marks             |
 
 ---
 
 ### 2️⃣ Courses Table
 
-Stores course details.
+Stores available subjects.
 
-**Columns:**
+| Column     | Description              |
+| ---------- | ------------------------ |
+| CourseID   | Unique course identifier |
+| CourseName | Name of the course       |
 
-* CourseID (Primary Key)
-* CourseName
+Courses used in this project:
+
+* Mathematics
+* Science
+* English
 
 ---
 
 ### 3️⃣ Enrollments Table
 
-Creates a relationship between Students and Courses.
+Stores **student marks per course** using relational mapping.
 
-**Columns:**
+| Column       | Description          |
+| ------------ | -------------------- |
+| EnrollmentID | Unique enrollment ID |
+| StudentID    | Reference to student |
+| CourseID     | Reference to course  |
+| Grade        | Marks obtained       |
 
-* EnrollmentID (Primary Key)
-* StudentID (Foreign Key)
-* CourseID (Foreign Key)
-* Grade (Marks scored in the course)
-
----
-
-## 🔗 Relationships
-
-* One student can enroll in multiple courses.
-* One course can have multiple students.
-* This forms a **one-to-many relationship**, implemented using foreign keys.
+This table connects students and courses using **foreign keys**.
 
 ---
 
-## 📊 SQL Concepts Used
+# ⚙️ SQL Concepts Used
 
-✔ CREATE TABLE
-✔ INSERT INTO
-✔ SELECT
-✔ WHERE
-✔ UPDATE
-✔ ORDER BY
-✔ GROUP BY
-✔ Aggregate Functions (AVG, SUM, COUNT)
-✔ JOIN (INNER JOIN)
-✔ Subqueries
+This project demonstrates multiple SQL concepts:
 
----
-
-## 📈 Analysis Performed
-
-* View all students
-* Calculate average marks per subject
-* Find top-performing students
-* Count students per grade
-* List students enrolled in each course
-* Calculate average grade per course
-* Find top 3 students overall
-* Count students who failed
+* Table creation
+* Primary keys and foreign keys
+* Data insertion
+* INNER JOIN
+* GROUP BY
+* Aggregate functions
+* Ranking using variables
+* CASE statements
+* Views
 
 ---
 
-## 🛠 Tools Used
+# 📊 Data Analysis Queries
 
-* MySQL / PostgreSQL
-* DB Fiddle (Online SQL Runner)
-* VS Code
+The project performs several analytical queries:
+
+### ✔ Course-wise student marks
+
+Displays student marks for each subject.
+
+### ✔ Average marks per course
+
+Calculates the average score for every subject.
+
+### ✔ Top 3 students
+
+Identifies the highest-performing students based on total marks.
+
+### ✔ Student ranking
+
+Ranks students based on their total scores.
+
+### ✔ Failed student count
+
+Counts students who scored below the passing mark.
+
+### ✔ Course-wise pass percentage
+
+Calculates the percentage of students passing each subject.
+
+### ✔ Students enrolled in multiple courses
+
+Shows students taking more than one course.
 
 ---
 
-## 🎯 Learning Outcomes
+# 🏆 Example Insights
 
-* Designed a relational database structure
-* Implemented foreign key constraints
-* Practiced SQL joins and aggregations
-* Developed analytical thinking using SQL
-* Understood normalization and table relationships
+Some insights that can be derived from the analysis:
 
----
-
-## 🚀 How to Run
-
-1. Copy the SQL script into MySQL / DB Fiddle.
-2. Execute the script.
-3. Run the queries provided at the end of the file to view results.
+* Identify **top-performing students**
+* Determine **which subject students perform best in**
+* Analyze **pass percentages per course**
+* Rank students based on academic performance
 
 ---
 
-## 📌 Author
+# 🧠 SQL View
 
-Developed by: **Yukesh Kanna**
-SQL Data Analysis Internship Project
+A view named **StudentTotals** is created to simplify total marks calculation.
+
+This view stores:
+
+* Student ID
+* Student name
+* Total marks
+
+This allows easy querying for **leaderboards and rankings**.
+
+---
+
+# 💻 Technologies Used
+
+* SQL (MySQL)
+* Relational Database Concepts
+* Data Analysis using SQL Queries
+
+---
+
+# 📈 Learning Outcomes
+
+Through this project, the following skills are demonstrated:
+
+* Designing relational database schemas
+* Writing analytical SQL queries
+* Using joins to combine multiple tables
+* Performing aggregations and ranking
+* Creating views for reusable queries
+
+---
+
+# 🚀 How to Run the Project
+
+1. Create the database in MySQL
+2. Run the table creation queries
+3. Insert the sample data
+4. Execute the analysis queries
+
+The output will show **student rankings, averages, and performance insights.**
 
 ---
 
