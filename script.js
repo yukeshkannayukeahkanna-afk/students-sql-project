@@ -13,17 +13,21 @@ function typeRole() {
   if (!typedText) return;
 
   const currentRole = roles[roleIndex];
-  typedText.textContent = deleting
-    ? currentRole.slice(0, charIndex--)
-    : currentRole.slice(0, charIndex++);
+  if (deleting) {
+    charIndex = Math.max(0, charIndex - 1);
+    typedText.textContent = currentRole.slice(0, charIndex);
+  } else {
+    charIndex = Math.min(currentRole.length, charIndex + 1);
+    typedText.textContent = currentRole.slice(0, charIndex);
+  }
 
-  if (!deleting && charIndex > currentRole.length) {
+  if (!deleting && charIndex === currentRole.length) {
     deleting = true;
     setTimeout(typeRole, 1000);
     return;
   }
 
-  if (deleting && charIndex < 0) {
+  if (deleting && charIndex === 0) {
     deleting = false;
     roleIndex = (roleIndex + 1) % roles.length;
   }
