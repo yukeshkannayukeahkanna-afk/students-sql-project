@@ -168,7 +168,7 @@
           <a href="https://www.linkedin.com/in/yukeshkanna022007" target="_blank" rel="noreferrer">LinkedIn</a>
           <a href="https://github.com/yukeshkannayukeahkanna-afk" target="_blank" rel="noreferrer">GitHub</a>
         </div>
-        <form class="contact-form" action="mailto:yukeshkanna022007@gmail.com" method="post" enctype="text/plain">
+        <form class="contact-form" id="contact-form" novalidate>
           <label>
             Name
             <input type="text" name="name" required />
@@ -182,6 +182,7 @@
             <textarea name="message" rows="5" required></textarea>
           </label>
           <button type="submit" class="btn btn-primary">Send Message</button>
+          <p id="form-status" class="form-status" aria-live="polite"></p>
         </form>
       </div>
     </section>
