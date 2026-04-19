@@ -1,0 +1,20 @@
+Yukeshkanna
+Web Designer & Web Developer
+
+Email: yukeshkanna022007@gmail.com
+LinkedIn: https://www.linkedin.com/in/yukeshkanna022007
+GitHub: https://github.com/yukeshkannayukeahkanna-afk
+
+Professional Summary:
+Designs and builds modern, responsive websites with clean UI, accessible UX, and performance-first implementation.
+
+Core Skills:
+- Frontend: HTML, CSS, JavaScript, React
+- Backend: Node.js, Python
+- Tools: Git, VS Code, Figma, AI Tools
+
+Selected Projects:
+- Portfolio Website
+- Student Management System
+- E-commerce UI
+- Weather App
