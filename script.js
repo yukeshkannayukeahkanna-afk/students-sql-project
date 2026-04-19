@@ -17,7 +17,7 @@ function typeRole() {
     ? currentRole.slice(0, charIndex--)
     : currentRole.slice(0, charIndex++);
 
-  if (!deleting && charIndex > currentRole.length + 1) {
+  if (!deleting && charIndex > currentRole.length) {
     deleting = true;
     setTimeout(typeRole, 1000);
     return;
@@ -74,5 +74,7 @@ contactForm?.addEventListener("submit", (event) => {
   contactForm.reset();
 });
 
-yearEl.textContent = String(new Date().getFullYear());
+if (yearEl) {
+  yearEl.textContent = String(new Date().getFullYear());
+}
 typeRole();
